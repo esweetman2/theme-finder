@@ -9,11 +9,6 @@ from main import scrape # scrape(domains) -- domains foramt is [['domain.com', '
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
-# CORS(app)
-
-# @app.route('/', methods=['GET'])
-# def hello():
-#     return jsonify({'msg' : 'welcome'})
 
 @app.route('/api/scrape', methods=['GET', 'POST'])
 def scrape_domain():
