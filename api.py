@@ -23,13 +23,10 @@ def scrape_domain():
         # scrape_domain = pd.read_csv('esweetman.csv')
         else:
             scrape_domain = scrape_domain.drop([0])
-            # scrape_domain = scrape_domain.loc[:, ~scrape_domain.columns.str.contains('^Unnamed')]
-            # print(scrape_domain)
             scrape_domain = scrape_domain.applymap(str)
             scrape_domain = scrape_domain.to_json(orient="records")
-            # print(scrape_domain)
             return scrape_domain
-            # return jsonify({'msg': 'true'})
+
 
     else:
         return "Error"
